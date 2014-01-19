@@ -33,10 +33,9 @@
 
 (estarter-ensure-dir estarter-save)
 (estarter-ensure-dir estarter-backup)
-(estarter-ensure-dir estarter-modules)
 
 ;; load modules
-(add-to-list 'load-path estarter-modules)
+(estarter-ensure-and-load-dir estarter-modules)
 (require 'estarter-mod-go)
 (require 'estarter-mod-evil)
 

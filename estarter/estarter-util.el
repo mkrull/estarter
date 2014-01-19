@@ -11,6 +11,11 @@
   (unless (file-exists-p dir)
     (make-directory dir)))
 
+(defun estarter-ensure-and-load-dir (name)
+  (setq-local estarter-basename (file-name-sans-extension name))
+  (estarter-ensure-dir estarter-basename)
+  (add-to-list 'load-path estarter-basename))
+
 (provide 'estarter-util)
 
 ;;; estarter-util.el --- end
