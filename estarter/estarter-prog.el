@@ -19,6 +19,7 @@
   (require 'rainbow-delimiters)
   (rainbow-delimiters-mode)
   (estarter-font-lock-comment-annotations)
+  (require 'yasnippet-bundle)
   (when (fboundp 'evil-mode)
     (eval-after-load "evil"
                  '(progn

@@ -29,6 +29,8 @@
      ido-ubiquitous
      smex
      ido-vertical-mode
+     yasnippet
+     yasnippet-bundle
      )
   "List of automatically installed packages")
 

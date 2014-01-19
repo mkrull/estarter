@@ -1,6 +1,8 @@
 ;;; estarter-frame.el --- setting visuals and basic behaviour
 ;;;
 
+(require 'estarter-util)
+
 ;; disable toolbar and menubar
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
@@ -64,16 +66,6 @@
   '(flycheck-info ((t (:underline "ForestGreen"))))
   '(flycheck-warning ((t (:underline "DarkOrange"))))))
 
-;; Set Frame width/height
-(defun arrange-frame (w h x y)
-  "Set the width, height, and x/y position of the current frame"
-  (let ((frame (selected-frame)))
-    (delete-other-windows)
-    (set-frame-position frame x y)
-    (set-frame-size frame w h)))
-
-(arrange-frame 165 55 5 5)
-
 ;; display time in the modeline for fullscreen convenience
 (setq display-time-string-forms
       '((propertize (concat " " 24-hours ":" minutes " ")
@@ -81,7 +73,14 @@
 (display-time-mode 1)
 
 ;; set Terminus default font
-(set-default-font "Terminus-12")
+(set-default-font "Terminus-13")
+
+;; full screen
+(defun switch-full-screen ()
+  (interactive)
+  (estarter-maybe-shell-command "wmctrl" "-r :ACTIVE: -btoggle,fullscreen"))
+
+(global-set-key [f11] 'switch-full-screen)
 
 (provide 'estarter-frame)
 
