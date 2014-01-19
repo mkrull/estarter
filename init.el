@@ -15,15 +15,8 @@
   "Estarter save directory")
 (defvar estarter-backup (expand-file-name "backup" estarter-root)
   "Estarter save directory")
-(defvar estarter-personal (expand-file-name "personal" estarter-root)
-  "Estarter personal directory")
-
-(unless (file-exists-p estarter-save)
-  (make-directory estarter-save))
-(unless (file-exists-p estarter-backup)
-  (make-directory estarter-backup))
-(unless (file-exists-p estarter-personal)
-  (make-directory estarter-personal))
+(defvar estarter-modules (expand-file-name "modules" estarter-root)
+  "Estarter module directory")
 
 (setq backup-directory-alist
   `((".*" . ,estarter-backup)))
@@ -31,17 +24,20 @@
   `((".*" ,estarter-backup t)))
 (setq auto-save-list-file-prefix estarter-backup)
 
+;; load internal config
 (add-to-list 'load-path estarter-lib)
-(add-to-list 'load-path estarter-personal)
-
 (require 'estarter-packages)
 (require 'estarter-frame)
 (require 'estarter-prog)
-(require 'estarter-evil)
 (require 'estarter-ido)
 
-;; TODO refactor in module
-(require 'go-autocomplete)
-(require 'auto-complete-config)
+(estarter-ensure-dir estarter-save)
+(estarter-ensure-dir estarter-backup)
+(estarter-ensure-dir estarter-modules)
+
+;; load modules
+(add-to-list 'load-path estarter-modules)
+(require 'estarter-mod-go)
+(require 'estarter-mod-evil)
 
 ;;; init.el --- end

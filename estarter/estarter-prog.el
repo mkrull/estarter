@@ -20,16 +20,7 @@
   (rainbow-delimiters-mode)
   (estarter-font-lock-comment-annotations)
   (require 'yasnippet-bundle)
-  (when (fboundp 'evil-mode)
-    (eval-after-load "evil"
-                 '(progn
-                    ;; Navigation in autocomplete menues gets hijacked by evil
-                    (define-key ac-completing-map (kbd "C-n") 'ac-next)
-                    (define-key ac-completing-map (kbd "C-p") 'ac-previous)
-                    ;; Let me stop autocompleting the emacs/evil way
-                    (define-key ac-completing-map (kbd "C-g") 'ac-stop)
-                    (define-key ac-completing-map (kbd "ESC") 'evil-normal-state)
-                    (evil-make-intercept-map ac-completing-map)))))
+  (smartparens-mode))
 
 (setq estarter-prog-mode-hook 'estarter-prog-mode-config)
 (add-hook 'prog-mode-hook (lambda()
