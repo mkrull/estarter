@@ -21,7 +21,6 @@
      color-theme-solarized
      auto-complete
      evil
-     evil-nerd-commenter
      magit
      gitignore-mode
      gitconfig
@@ -29,8 +28,6 @@
      ido-ubiquitous
      smex
      ido-vertical-mode
-     yasnippet
-     yasnippet-bundle
      )
   "List of automatically installed packages")
 
@@ -41,7 +38,7 @@
 (defun estarter-install-package (package)
   "Install PACKAGE if not already installed"
   (unless (memq package estarter-package-list)
-    (add-lo-list 'estarter-package-list package))
+    (add-to-list 'estarter-package-list package))
   (unless (package-installed-p package)
     (package-install package)))
 

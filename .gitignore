@@ -1,6 +1,8 @@
 ac-comphist.dat
-save/
-backup/
+.save/
+.backup/
 elpa/
 personal/
-*~
+session.*
+url/
+tramp

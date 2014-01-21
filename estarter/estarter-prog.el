@@ -8,6 +8,11 @@
    nil '(("\\<\\(\\(FIX\\(ME\\)?\\|TODO\\|OPTIMIZE\\|HACK\\|REFACTOR\\):\\)"
           1 font-lock-warning-face t))))
 
+(defun estarter-smartparens ()
+  (require 'smartparens-config)
+  (smartparens-mode)
+  (show-smartparens-mode))
+
 (defun estarter-prog-mode-config ()
   "Hook for prog mode"
   (require 'guru-mode)
@@ -15,12 +20,12 @@
   ;; auto complete
   (require 'auto-complete-config)
   (ac-config-default)
+  (estarter-smartparens)
   ;; rainbow delimiters
   (require 'rainbow-delimiters)
   (rainbow-delimiters-mode)
   (estarter-font-lock-comment-annotations)
-  (require 'yasnippet-bundle)
-  (smartparens-mode))
+  (require 'yasnippet-bundle))
 
 (setq estarter-prog-mode-hook 'estarter-prog-mode-config)
 (add-hook 'prog-mode-hook (lambda()
