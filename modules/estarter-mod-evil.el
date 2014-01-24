@@ -3,6 +3,7 @@
 ;;; Code:
 
 (defun estarter-mod-evil ()
+  (estarter-install-packages '(evil evil-nerd-commenter))
   ;; change mode-line color by evil state
   (lexical-let ((default-color (cons (face-background 'mode-line)
 				     (face-foreground 'mode-line))))

@@ -1,8 +1,6 @@
 ;;; estarter-mod-autoinstall.el --- autoinstall packages
 
 (setq-local packages '(
-		       yasnippet-bundle
-		       evil-nerd-commenter
 		       nginx-mode
 		       ))
 

@@ -20,6 +20,10 @@
 (column-number-mode t)
 (size-indication-mode t)
 
+;; enable line numbers
+(global-linum-mode t)
+(setq linum-format "%3d\u2502")
+
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -32,10 +36,6 @@
 
 ;; solarized
 (load-theme 'solarized-dark t)
-
-;; enable line numbers
-(global-linum-mode t)
-(setq linum-format "%3d\u2502")
 
 ;; flymake indicators
 ;; each integer represents a row of pixels
@@ -73,7 +73,7 @@
 (display-time-mode 1)
 
 ;; set Terminus default font
-(set-default-font "Terminus-13")
+(set-default-font "Terminus-12")
 
 ;; full screen
 (defun switch-full-screen ()
@@ -81,6 +81,11 @@
   (estarter-maybe-shell-command "wmctrl" "-r :ACTIVE: -btoggle,fullscreen"))
 
 (global-set-key [f11] 'switch-full-screen)
+
+;; nice scrolling
+(setq scroll-margin 10
+      scroll-conservatively 100000
+      scroll-preserve-screen-position 1)
 
 (provide 'estarter-frame)
 

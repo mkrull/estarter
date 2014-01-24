@@ -15,12 +15,10 @@
 (defvar estarter-package-list
   '( rainbow-delimiters
      flycheck
-     smartparens
      guru-mode
      elisp-cache
      color-theme-solarized
      auto-complete
-     evil
      magit
      gitignore-mode
      gitconfig
@@ -28,6 +26,7 @@
      ido-ubiquitous
      smex
      ido-vertical-mode
+     diminish
      )
   "List of automatically installed packages")
 

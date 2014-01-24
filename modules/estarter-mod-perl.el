@@ -27,7 +27,7 @@
 (setq estarter-cperl-mode-hook 'estarter-cperl-mode)
 
 (add-hook 'cperl-mode-hook (lambda ()
-                             (run-hooks 'prelude-cperl-mode-hook)) t)
+                             (run-hooks 'estarter-cperl-mode-hook)) t)
 
 (provide 'estarter-mod-perl)
 

@@ -9,12 +9,18 @@
           1 font-lock-warning-face t))))
 
 (defun estarter-smartparens ()
+  (estarter-install-package 'smartparens)
   (require 'smartparens-config)
-  (smartparens-mode)
-  (show-smartparens-mode))
+  (setq sp-base-key-bindings 'paredit)
+  (setq sp-autoskip-closing-pair 'always)
+  (setq sp-hybrid-kill-entire-symbol nil)
+  (sp-use-paredit-bindings)
+  (show-smartparens-global-mode))
 
 (defun estarter-prog-mode-config ()
   "Hook for prog mode"
+  (estarter-install-packages '(yasnippet yasnippet-bundle))
+  (require 'yasnippet-bundle)
   (require 'guru-mode)
   (guru-mode +1)
   ;; auto complete
@@ -24,8 +30,7 @@
   ;; rainbow delimiters
   (require 'rainbow-delimiters)
   (rainbow-delimiters-mode)
-  (estarter-font-lock-comment-annotations)
-  (require 'yasnippet-bundle))
+  (estarter-font-lock-comment-annotations))
 
 (setq estarter-prog-mode-hook 'estarter-prog-mode-config)
 (add-hook 'prog-mode-hook (lambda()
