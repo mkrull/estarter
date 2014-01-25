@@ -8,8 +8,10 @@
 ;; add marmalade and melpa repositories
 (add-to-list 'package-archives 
              '("marmalade" .
-               "http://marmalade-repo.org/packages/")
-             '("melpa" . "http://melpa.milkbox.net/packages/"))
+               "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives 
+               '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 (package-initialize)
 
 (defvar estarter-package-list
