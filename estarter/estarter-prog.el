@@ -9,7 +9,6 @@
           1 font-lock-warning-face t))))
 
 (defun estarter-smartparens ()
-  (estarter-install-package 'smartparens)
   (require 'smartparens-config)
   (setq sp-base-key-bindings 'paredit)
   (setq sp-autoskip-closing-pair 'always)
@@ -19,7 +18,6 @@
 
 (defun estarter-prog-mode-config ()
   "Hook for prog mode"
-  (estarter-install-packages '(yasnippet yasnippet-bundle))
   (require 'yasnippet-bundle)
   (require 'guru-mode)
   (guru-mode +1)

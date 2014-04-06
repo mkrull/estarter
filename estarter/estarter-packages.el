@@ -29,6 +29,9 @@
      smex
      ido-vertical-mode
      diminish
+     yasnippet
+     yasnippet-bundle
+     smartparens
      )
   "List of automatically installed packages")
 
