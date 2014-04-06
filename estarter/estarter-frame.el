@@ -1,4 +1,4 @@
-;;;mestarter-frame.el --- setting visuals and basic behaviour
+;;; estarter-frame.el --- setting visuals and basic behaviour
 ;;;
 
 (require 'estarter-util)

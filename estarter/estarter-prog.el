@@ -14,7 +14,8 @@
   (setq sp-autoskip-closing-pair 'always)
   (setq sp-hybrid-kill-entire-symbol nil)
   (sp-use-paredit-bindings)
-  (show-smartparens-global-mode))
+  (show-smartparens-global-mode)
+  (smartparens-mode))
 
 (defun estarter-prog-mode-config ()
   "Hook for prog mode"
