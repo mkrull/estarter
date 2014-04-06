@@ -8,7 +8,12 @@
      (defun prelude-haskell-mode-defaults ()
        (subword-mode +1)
        (turn-on-haskell-doc-mode)
-       (turn-on-haskell-indentation))
+       (turn-on-haskell-indentation)
+       (eval-after-load "haskell-mode"
+         '(define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile))
+
+       (eval-after-load "haskell-cabal"
+         '(define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-compile)))
 
      (setq prelude-haskell-mode-hook 'prelude-haskell-mode-defaults)
 
@@ -18,4 +23,3 @@
 (provide 'estarter-mod-haskell)
 
 ;;; estarter-mod-haskell.el --- end
-

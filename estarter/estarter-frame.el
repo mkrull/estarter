@@ -1,4 +1,4 @@
-;;; estarter-frame.el --- setting visuals and basic behaviour
+;;;mestarter-frame.el --- setting visuals and basic behaviour
 ;;;
 
 (require 'estarter-util)
@@ -72,8 +72,19 @@
                     'face 'bold)))
 (display-time-mode 1)
 
-;; set Terminus default font
-(set-default-font "Terminus-12")
+(cond 
+ ((find-font (font-spec :name "Source Code Pro"))
+  (set-frame-font "Source Code Pro-10"))
+ ((find-font (font-spec :name "Terminus"))
+  (set-default-font "Terminus-12"))
+ ((find-font (font-spec :name "DejaVu Sans Mono"))
+  (set-frame-font "DejaVu Sans Mono-12"))
+ ((find-font (font-spec :name "inconsolata"))
+  (set-frame-font "inconsolata-12"))
+ ((find-font (font-spec :name "Lucida Console"))
+  (set-frame-font "Lucida Console-12"))
+ ((find-font (font-spec :name "courier"))
+  (set-frame-font "courier-12")))
 
 ;; full screen
 (defun switch-full-screen ()
