@@ -6,3 +6,5 @@ personal/
 session.*
 url/
 tramp
+*flycheck_*
+auto-save-list/

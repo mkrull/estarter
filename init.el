@@ -37,6 +37,7 @@
 (require 'estarter-mod-evil)
 (require 'estarter-mod-perl)
 (require 'estarter-mod-csharp)
+(require 'estarter-mod-haskell)
 
 (defun estarter-flycheck-emacs-lisp-hook ()
   (setq flycheck-emacs-lisp-load-path load-path))
