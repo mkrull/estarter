@@ -8,6 +8,8 @@
   (tool-bar-mode -1))
 (when (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode -1))
 
 ;; keep calm and don't blink
 (blink-cursor-mode -1)
@@ -85,7 +87,14 @@
 ;; full screen
 (defun switch-full-screen ()
   (interactive)
-  (estarter-maybe-shell-command "wmctrl" "-r :ACTIVE: -btoggle,fullscreen"))
+  (cond
+   ((string-equal system-type "windows-nt")
+    (w32-send-sys-command 61488))
+   ((string-equal system-type "linux")
+    (estarter-maybe-shell-command "wmctrl" "-r :ACTIVE: -btoggle,fullscreen"))
+   ((string-equal system-type "darwin")
+    (message "Not implemented for MacOS at the moment"))
+   (t (message "Unknown system type"))))
 
 (global-set-key [f11] 'switch-full-screen)
 
