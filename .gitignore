@@ -8,3 +8,4 @@ url/
 tramp
 *flycheck_*
 auto-save-list/
+custom.el

@@ -17,6 +17,9 @@
   (show-smartparens-global-mode)
   (smartparens-mode))
 
+(defun set-newline-and-indent()
+  (local-set-key (kbd "RET") 'newline-and-indent))
+
 (defun estarter-prog-mode-config ()
   "Hook for prog mode"
   (require 'yasnippet-bundle)
@@ -29,7 +32,8 @@
   ;; rainbow delimiters
   (require 'rainbow-delimiters)
   (rainbow-delimiters-mode)
-  (estarter-font-lock-comment-annotations))
+  (estarter-font-lock-comment-annotations)
+  (set-newline-and-indent))
 
 (setq estarter-prog-mode-hook 'estarter-prog-mode-config)
 (add-hook 'prog-mode-hook (lambda()

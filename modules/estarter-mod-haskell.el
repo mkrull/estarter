@@ -5,7 +5,7 @@
 
 (eval-after-load 'haskell-mode
   '(progn
-     (defun prelude-haskell-mode-defaults ()
+     (defun estarter-haskell-mode-defaults ()
        (subword-mode +1)
        (turn-on-haskell-doc-mode)
        (turn-on-haskell-indentation)
@@ -15,10 +15,9 @@
        (eval-after-load "haskell-cabal"
          '(define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-compile)))
 
-     (setq prelude-haskell-mode-hook 'prelude-haskell-mode-defaults)
-
+     (setq estarter-haskell-mode-hook 'estarter-haskell-mode-defaults)
      (add-hook 'haskell-mode-hook (lambda ()
-                                    (run-hooks 'prelude-haskell-mode-hook)))))
+                                    (run-hooks 'estarter-haskell-mode-hook)))))
 
 (provide 'estarter-mod-haskell)
 
