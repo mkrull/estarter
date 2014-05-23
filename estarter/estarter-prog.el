@@ -33,6 +33,7 @@
   (require 'rainbow-delimiters)
   (rainbow-delimiters-mode)
   (estarter-font-lock-comment-annotations)
+  (substitute-key-definition 'kill-buffer 'close-and-kill-this-window global-map)
   (set-newline-and-indent))
 
 (setq estarter-prog-mode-hook 'estarter-prog-mode-config)

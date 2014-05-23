@@ -16,6 +16,13 @@
   (estarter-ensure-dir estarter-basename)
   (add-to-list 'load-path estarter-basename))
 
+(defun close-and-kill-this-window ()
+  "close buffer including window if it is not the last"
+  (interactive)
+  (kill-this-buffer)
+  (if (not (one-window-p))
+      (delete-window)))
+
 (provide 'estarter-util)
 
 ;;; estarter-util.el --- end

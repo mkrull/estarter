@@ -6,5 +6,7 @@
 (require 'go-autocomplete)
 (require 'auto-complete-config)
 
+(add-hook 'before-save-hook #'gofmt-before-save)
+
 (provide 'estarter-mod-go)
 ;; estarter-mod-go.el --- end
