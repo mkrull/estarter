@@ -22,7 +22,7 @@
 
 (defun estarter-prog-mode-config ()
   "Hook for prog mode"
-  (require 'yasnippet-bundle)
+  ;(require 'yasnippet-bundle)
   (require 'guru-mode)
   (guru-mode +1)
   ;; auto complete
