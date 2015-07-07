@@ -19,7 +19,7 @@
      flycheck
      guru-mode
      elisp-cache
-     color-theme-solarized
+     solarized-theme
      auto-complete
      magit
      gitignore-mode
@@ -29,8 +29,8 @@
      smex
      ido-vertical-mode
      diminish
-;     yasnippet
-;     yasnippet-bundle
+     yasnippet
+     yasnippet-bundle
      smartparens
      )
   "List of automatically installed packages")
